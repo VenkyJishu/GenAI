@@ -1,14 +1,14 @@
 'This code is used read files from local directory and answer to our questions using Llama3 Model along with stremlit'
 
-'''
-streamlit: For building web apps with Python.
-os: For interacting with the operating system.
-langchain_groq: Specific to Groq's language understanding capabilities.
-langchain_openai: For using OpenAI's embeddings.
-langchain.text_splitter, langchain.chains, langchain.vectorstores: Modules for various language processing tasks.
-dotenv: For loading environment variables from a .env file.
-time: For timing operations.
-'''
+#streamlit: For building web apps with Python.
+#os: For interacting with the operating system.
+#langchain_groq: Specific to Groq's language understanding capabilities.
+#langchain_openai: For using OpenAI's embeddings.
+#langchain.text_splitter, langchain.chains, langchain.vectorstores: Modules for various language processing tasks.
+#dotenv: For loading environment variables from a .env file.
+#time: For timing operations.
+
+
 import streamlit as st 
 import os
 from langchain_groq import ChatGroq
@@ -22,6 +22,7 @@ from langchain_community.document_loaders import PyPDFDirectoryLoader
 
 from dotenv import load_dotenv
 import time
+
 
 load_dotenv() # imports .env variables to current environment
 
@@ -69,21 +70,21 @@ def vector_embedding():
         st.session_state.vectors = FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings)
 
 
-prompt_new = st.text_input("Enter your query on existed PDF Doc")
-if st.button("Doc/PDF Embeddig "):
+
+if st.button("Doc/PDF Embedding "):
     vector_embedding()
     st.write("Vector Store DB is ready ")
 
-
+prompt_new = st.text_input("Enter your query on existed PDF Doc")
 import time
 print(" prompt_new is ",prompt_new)
 if prompt_new:
-    ''''
-    Below code checks if there's a user query (prompt_new).
-    If there is, it creates a retrieval chain using Groq and the document vectors stored in the session state.
-    Then, it invokes the retrieval chain with the user's query and stores the response.
-    Finally, it displays the answer to the user's query using st.write()
-    '''
+    
+    #Below code checks if there's a user query (prompt_new).
+    #If there is, it creates a retrieval chain using Groq and the document vectors stored in the session state.
+    #Then, it invokes the retrieval chain with the user's query and stores the response.
+    #Finally, it displays the answer to the user's query using st.write()
+    
     document_chain = create_stuff_documents_chain(llm,prompt)
     retriever = st.session_state.vectors.as_retriever()
     retrieval_chain = create_retrieval_chain(retriever,document_chain)
@@ -92,10 +93,10 @@ if prompt_new:
     print("Response Time ",time.process_time()-start)
     st.write(response['answer'])
 
-    ''''
-    Below code creates an expander widget titled "Documents Similarity Search". When expanded, 
-    it iterates over the documents returned in the response and displays their page content along with a separator.
-    '''
+    
+    #Below code creates an expander widget titled "Documents Similarity Search". When expanded, 
+    #it iterates over the documents returned in the response and displays their page content along with a separator.
+    
 
     with st.expander("Docoments Similarity Search"):
         for i,doc in enumerate(response["context"]):
