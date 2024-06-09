@@ -4,6 +4,13 @@ Post that we can translate the description to required languages and also listen
 
 Tech Stack: Streamlit for UI, generativeai Model for AI tasks and Google translate for text translation and 
 pyttsx3 (Python Text-To-Speech) library used where text needs to be converted into spoken words. 
+
+
+
+For execution
+"Streamlit run image_translate.py"
+
+
 """
 
 import streamlit as st
