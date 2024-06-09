@@ -1,3 +1,11 @@
+"""
+Below code is used to upload image and get description of it , 
+Post that we can translate the description to required languages and also listen voice in Male or Female version.
+
+Tech Stack: Streamlit for UI, generativeai Model for AI tasks and Google translate for text translation and 
+pyttsx3 (Python Text-To-Speech) library used where text needs to be converted into spoken words. 
+"""
+
 import streamlit as st
 from PIL import Image
 import google.generativeai as genai
