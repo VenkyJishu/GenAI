@@ -1,3 +1,11 @@
+"""
+This program allows to us to upload image and prompt on that image using Streamlit application
+
+
+For execution
+"Streamlit run image_analysis.py"
+"""
+
 ######## Import the required pacakges ############
 import streamlit as st
 import google.generativeai as genai
