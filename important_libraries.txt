@@ -1,0 +1,48 @@
+EDA:
+1) Pandas: For Data Frame
+2) Numpy: For Numerical
+3) Matplotlib: Used for plotting
+4) Seaborn: Used for plotting
+5) plotly: Used for plotting
+6) Bokhe: Used for plotting
+
+
+Machine Learning Packages:
+
+7) Sickit-Learn(sklearn)
+
+Deep Learning:
+
+8) Tensorflow: Google
+9) Keras: Google
+10) Pytorch: Facebook
+
+NLP
+
+11) NLTK: (Natural Language Tool Kit)
+12) Scipy
+
+
+BERT
+
+13) Transformers: Hugging Face (Google)
+
+Google Models
+
+14) Specific Google Packages
+
+
+Azure ML
+
+15) Azure Packages
+
+Gen AI
+
+16) Gemini AI: Google
+17) ChatGPT : OpenAI
+
+LangChain:
+
+18) LangChain Packages
+
+
