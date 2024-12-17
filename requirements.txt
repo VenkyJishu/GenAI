@@ -23,3 +23,5 @@ langchainhub
 sentence_transformers
 nltk
 gensim
+openpyxl
+transformers
