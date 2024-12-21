@@ -28,3 +28,4 @@ transformers
 spacy
 en-core-web-sm==3.0.0
 flask
+dagshub
