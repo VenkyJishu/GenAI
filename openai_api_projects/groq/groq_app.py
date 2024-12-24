@@ -1,4 +1,4 @@
-'This code is used read files from local directory and answer to our questions using Llama3 Model along with stremlit'
+'This code is used read files from local directory and answer to our questions using Llama3 Model and used stremlit for front end'
 
 #streamlit: For building web apps with Python.
 #os: For interacting with the operating system.
@@ -58,8 +58,28 @@ def vector_embedding():
     '''
     if "vectors" not in st.session_state:
         st.session_state.embeddings = OpenAIEmbeddings()
+
+        # Going 2 steps back to access the "pdf_files" directory
+        base_path = os.path.join(os.getcwd(), "..", "..")  # Move 2 steps up
+        pdf_folder = os.path.join(base_path, "pdf_files")  # Now access the "pdf_files" directory
+
+        if os.path.isdir(pdf_folder):
+            # List all files and filter only .pdf files
+            pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith('.pdf')]
+            if not pdf_files:
+                st.error("No PDF files found in the folder.")
+                return
+            
+            # Allow the user to select a specific PDF document
+            selected_pdf = st.selectbox("Select a PDF document to load:", pdf_files)
+
+            st.write(f"You selected: {selected_pdf}")
+        else:
+            st.error(f"The folder '{pdf_folder}' does not exist.")
+            return
+        
         #Ingesting "pdf" directory files
-        st.session_state.loader = PyPDFDirectoryLoader("./HuggingFace/pdf")
+        st.session_state.loader = PyPDFDirectoryLoader(os.path.join(pdf_folder, selected_pdf))
         #Loading documents which are in above "pdf" directory
         st.session_state.docs = st.session_state.loader.load()
         # Splitting documents into chunks 
