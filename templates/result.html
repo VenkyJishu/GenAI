@@ -48,37 +48,26 @@ textarea {
 </style>
 </head>
 <body>
-
+	
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form action="{{ url_for('predict')}}" method="post" class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					NLP SMS Spam Detection
-				</span>
-
-				<label class="label-input100" for="message" style = "font-family: 'Lexend'; font-size:23px; font-weight:bold;"></label>
-				<div class="wrap-input100 validate-input">
-					<textarea id="SMS" class="input100" required = required name="SMS" placeholder="Type your message here..."></textarea>
-					<span class="focus-input100"></span>
+			<form class="contact100-form validate-form">
+				<div class="wrap-contact100">
+					{% if prediction==1 %}
+						<div style="color:red;text-align:center;font-size:45px">SPAM message !!!</div>
+					{% elif prediction ==0 %}
+						<div style="color:green;text-align:center;font-size:37px">Not a spam message !!!</div>
+					{% endif %}
 				</div>
 				
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							Predict
-							<i class="zmdi zmdi-arrow-right m-l-8"></i>
-						</span>
-					</button><br><br><br>
-				</div>
-				
-				<div class="reachme">
+				<div>
 				<p style = "font-family: 'Lexend'; font-size:24px;">Reach me at - </p>
-				<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="venky89"><a class="LI-simple-link" href='https://in.linkedin.com/in/venky89?trk=profile-badge' target="_blank">Venky M</a></div>
+				<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="venky89"><a class="LI-simple-link" href='https://www.linkedin.com/in/venky89?trk=profile-badge'>Venky M</a></div>
 				</div>
 				
 				<div>
 				<br><br><br><br>
-				<a href="mailto:venkatesh.jishu18@gmail.com" style = "font-family: 'Lexend'; font-size:24px;" target="_blank">Email - venkatesh.jishu18@gmail.com</a><br>
+				<a href="mailto: venkatesh.jishu18@gmail.com" style = "font-family: 'Lexend'; font-size:24px;" target="_blank">Email - venkatesh.jishu18@gmail.com</a><br>
 				<a href="https://github.com/VenkyJishu/GenAI" style = "font-family: 'Lexend'; font-size:24px;" target="_blank">Click here - GitHub Portfolio</a>
 				</div>
 				

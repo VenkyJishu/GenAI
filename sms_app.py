@@ -29,8 +29,8 @@ def predict():
         vector = cv.transform(data).toarray()
         prediction = model.predict(vector)
         # Convert prediction to a human-readable format
-        result = 'spam' if prediction[0] == 1 else 'ham'
+        #result = 'spam' if prediction[0] == 1 else 'ham'
         # Return prediction back to the front-end (render template with prediction)
-        return render_template('index.html', prediction=result)
+        return render_template('result.html', prediction=prediction)
 if __name__ == '__main__':
     app.run(debug=True)
