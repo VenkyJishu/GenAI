@@ -11,4 +11,16 @@ google-generativeai
 smolagents
 litellm
 gradio
+wordcloud
 grandalf
+seaborn
+matplotlib
+nltk
+gensim
+pyLDAvis
+spacy
+gradio
+pypdf
+langchain-google-vertexai
+pinecone-client
+langchain_pinecone

@@ -1,0 +1,5 @@
+(0, '0.018*"hi" + 0.018*"pleas" + 0.017*"thank" + 0.015*"regard" + 0.015*"event"')
+(1, '0.037*"pleas" + 0.019*"thank" + 0.017*"card" + 0.016*"regard" + 0.016*"re"')
+(2, '0.030*"pleas" + 0.018*"name" + 0.018*"thank" + 0.011*"regard" + 0.011*"report"')
+(3, '0.033*"card" + 0.027*"pleas" + 0.023*"thank" + 0.021*"send" + 0.017*"you"')
+(4, '0.048*"pleas" + 0.024*"thank" + 0.019*"regard" + 0.015*"hello" + 0.014*"hi"')
